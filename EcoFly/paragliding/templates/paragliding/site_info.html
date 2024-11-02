@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Site Information{% endblock %}
+{% block content %}
+<h2>Paragliding Site Information</h2>
+<div class="list-group">
+    {% for site in sites %}
+    <div class="list-group-item">
+        <h5>{{ site.name }}</h5>
+        <p>Weather: {{ site.weather_conditions }}</p>
+        <p>Best Times: {{ site.best_flying_times }}</p>
+        <p>Regulations: {{ site.regulations }}</p>
+        <p>Safety Tips: {{ site.safety_tips }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

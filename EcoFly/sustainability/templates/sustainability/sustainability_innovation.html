@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Sustainability Innovation{% endblock %}
+{% block content %}
+<h2>Sustainability Innovations</h2>
+<p class="lead">Explore innovative ideas and practices shared by the paragliding community to make our sport more eco-friendly.</p>
+
+<div class="list-group">
+    {% for practice in practices %}
+    <div class="list-group-item">
+        <p>{{ practice.description }}</p>
+        {% if practice.user_submitted %}
+        <small class="text-muted">Submitted by a community member</small>
+        {% else %}
+        <small class="text-muted">Official EcoFly recommendation</small>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'sustainability:incentives' %}" class="btn btn-success">See Incentives for Eco-Friendly Practices</a>
+</div>
+{% endblock %}

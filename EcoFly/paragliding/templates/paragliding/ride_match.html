@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Ride Matching{% endblock %}
+{% block content %}
+<h2>Ride Matching</h2>
+<div class="list-group">
+    {% for ride in rides %}
+    <div class="list-group-item">
+        <h5>Ride from {{ ride.pickup_location }} to {{ ride.destination }}</h5>
+        <p>Time: {{ ride.time }} | Capacity: {{ ride.capacity }}</p>
+        <p>Preferences: {{ ride.preferences }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Equipment Listings{% endblock %}
+{% block content %}
+<h2>Equipment Listings</h2>
+<div class="list-group">
+    {% for item in listings %}
+    <div class="list-group-item">
+        <h5>{{ item.item_type }}</h5>
+        <p>Condition: {{ item.condition }} | Price: ${{ item.price }}</p>
+        <p>Location: {{ item.location }}</p>
+        <p>Description: {{ item.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

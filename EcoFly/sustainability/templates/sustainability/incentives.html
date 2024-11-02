@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Incentives for Sustainable Practices{% endblock %}
+{% block content %}
+<h2>Incentives for Sustainable Practices</h2>
+<p class="lead">EcoFly rewards community members for adopting eco-friendly practices. Earn points and redeem rewards for making sustainable choices in paragliding.</p>
+
+<div class="list-group">
+    {% for incentive in incentives %}
+    <div class="list-group-item">
+        <h5>{{ incentive.title }}</h5>
+        <p>{{ incentive.description }}</p>
+        <p><strong>Points:</strong> {{ incentive.points }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'sustainability:sustainability_innovation' %}" class="btn btn-primary">Explore Sustainability Innovations</a>
+</div>
+{% endblock %}
